@@ -32,12 +32,12 @@ cmake --build . --target install --config Release
 
 ## Usage
 Once the plug-in is build and loaded a new `wtBlendMatrix` node can be 
-created. There is a compound array attribute that contains an 
-`blendInputMatrix`, `blendOffsetMatrix`, `blendTranslateWeight`, 
-`blendRotateWeight`, `blendScaleWeight` and `blendShearWeight` attributes. By
-default the weight values are set to 1. The `blendInputMatrix` can be driven 
-directly by a nodes world matrix attribute and `blendOffsetMatrix` can be 
-calculated and set by the user to get the matrix in the desired location. 
+created. There is a compound array attribute that contains `blendInputMatrix`, 
+`blendOffsetMatrix`, `blendTranslateWeight`, `blendRotateWeight`, 
+`blendScaleWeight` and `blendShearWeight` attributes. By default the weight 
+values are set to 1. The `blendInputMatrix` can be driven directly by a nodes 
+world matrix attribute and `blendOffsetMatrix` can be calculated and set by 
+the user to get the matrix in the desired location. 
 
 <p align="center"><img src="icons/weighted-blend-matrix-compound-example.png?raw=true"></p>
 
