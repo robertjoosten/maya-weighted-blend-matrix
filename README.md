@@ -26,7 +26,7 @@ the launched version of Maya. When building the plugin for
 cd <PATH_TO_MODULE>
 mkdir build/<MAYA_VERSION>
 cd build/<MAYA_VERSION>
-cmake -A x64 -T v141 -DMAYA_VERSION=2022 ../../
+cmake -A x64 -T v141 -DMAYA_VERSION=<MAYA_VERSION> ../../
 cmake --build . --target install --config Release
 ```
 
@@ -38,8 +38,13 @@ created. There is a compound array attribute that contains an
 default the weight values are set to 1. The `blendInputMatrix` can be driven 
 directly by a nodes world matrix attribute and `blendOffsetMatrix` can be 
 calculated and set by the user to get the matrix in the desired location. 
+
+<p align="center"><img src="icons/weighted-blend-matrix-compound-example.png?raw=true"></p>
+
 At the top level the node has a `restMatrix` which is used when the sum of 
 weights on a component is 0. The `offsetMatrix` can be used as an offset 
 matrix that is used in the calculation after the blend matrix itself has been
 calculated, as a matrix attribute is not keyable a `composeMatrix` node can 
 be used to preserve the output location if using the node as a space switch.
+
+<p align="center"><img src="icons/weighted-blend-matrix-network-example.png?raw=true"></p>
