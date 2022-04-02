@@ -48,3 +48,9 @@ calculated, as a matrix attribute is not keyable a `composeMatrix` node can
 be used to preserve the output location if using the node as a space switch.
 
 <p align="center"><img src="icons/weighted-blend-matrix-network-example.png?raw=true"></p>
+
+When using Maya 2020 or above the `decomposeMatrix` and `composeMatrix` nodes 
+can be omitted as the `outputMatrix` attribute can be plugged directly into 
+the `offsetParentMatrix` which leaves the translate/rotate/scale and shear 
+attributes free to key the offset.
+
