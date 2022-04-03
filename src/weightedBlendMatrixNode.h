@@ -15,7 +15,14 @@
 
 using namespace Eigen;
 
-struct MatrixComponents { Vector3d translate; Vector4d rotate; Vector3d scale; Vector3d shear; };
+
+struct MatrixComponents { 
+	Vector3d translate; 
+	Vector4d rotate;
+	Vector3d scale; 
+	Vector3d shear; 
+};
+
 
 class WeightedBlendMatrixNode : public MPxNode {
 public:
@@ -39,8 +46,13 @@ public:
 	static MObject aBlendShearWeight;
 	static MObject aBlendMatrix;
 private:
-	Vector3d calculateComponent(MatrixXd& matrix, VectorXd& weights, Vector3d& rest);
-	Vector4d calculateComponent(MatrixXd& matrix, VectorXd& weights, Vector4d& rest);
-	MatrixComponents splitMatrix(MMatrix& matrix);
-	MMatrix constructMatrix(Vector3d& translate, Vector4d& rotate, Vector3d& scale, Vector3d& shear);
+	Vector3d calculateComponent(const MatrixXd& matrix, const VectorXd& weights, const Vector3d& rest);
+	Vector4d calculateComponent(const MatrixXd& matrix, const VectorXd& weights, const Vector4d& rest);
+	MatrixComponents splitMatrix(const MMatrix& matrix);
+	MMatrix constructMatrix(
+		const Vector3d& translate, 
+		const Vector4d& rotate, 
+		const Vector3d& scale, 
+		const Vector3d& shear
+	);
 };

@@ -181,7 +181,11 @@ MStatus WeightedBlendMatrixNode::compute(const MPlug& plug, MDataBlock& data) {
 }
 
 
-Vector3d WeightedBlendMatrixNode::calculateComponent(MatrixXd& matrix, VectorXd& weights, Vector3d& rest) {
+Vector3d WeightedBlendMatrixNode::calculateComponent(
+	const MatrixXd& matrix, 
+	const VectorXd& weights, 
+	const Vector3d& rest
+) {
     const double total = weights.sum();
     if (total == 0.0)
         return rest;
@@ -190,7 +194,11 @@ Vector3d WeightedBlendMatrixNode::calculateComponent(MatrixXd& matrix, VectorXd&
 }
 
 
-Vector4d WeightedBlendMatrixNode::calculateComponent(MatrixXd& matrix, VectorXd& weights, Vector4d& rest) {
+Vector4d WeightedBlendMatrixNode::calculateComponent(
+	const MatrixXd& matrix,
+	const VectorXd& weights,
+	const Vector4d& rest
+) {
     const double total = weights.sum();
     if (total == 0.0)
         return rest;
@@ -208,7 +216,7 @@ Vector4d WeightedBlendMatrixNode::calculateComponent(MatrixXd& matrix, VectorXd&
 }
 
 
-MatrixComponents WeightedBlendMatrixNode::splitMatrix(MMatrix& matrix) {
+MatrixComponents WeightedBlendMatrixNode::splitMatrix(const MMatrix& matrix) {
     MTransformationMatrix transform = MTransformationMatrix(matrix);
     
     double dRotateX; double dRotateY; double dRotateZ; double dRotateW;
@@ -229,7 +237,12 @@ MatrixComponents WeightedBlendMatrixNode::splitMatrix(MMatrix& matrix) {
 }
 
 
-MMatrix WeightedBlendMatrixNode::constructMatrix(Vector3d& translate, Vector4d& rotate, Vector3d& scale, Vector3d& shear) {
+MMatrix WeightedBlendMatrixNode::constructMatrix(
+	const Vector3d& translate, 
+	const Vector4d& rotate,
+	const Vector3d& scale, 
+	const Vector3d& shear
+) {
     MTransformationMatrix transform = MTransformationMatrix();
 
     MVector vTranslate = MVector(translate[0], translate[1], translate[2]);
