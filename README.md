@@ -16,7 +16,7 @@ different components.
 ## Compiling
 Building the plugin using cmake will place the plugin in the plug-ins folder 
 with a maya version divider. This will ensure the plug-in is compatible with 
-the launched version of Maya. When building the plugin for 
+the launched version of Maya. 
 
 1. Copy the following libraries to their respective folders in `/extern`:
     - [Eigen 3.3.9](https://eigen.tuxfamily.org/) with path `/extern/Eigen/Eigen/Dense`,
