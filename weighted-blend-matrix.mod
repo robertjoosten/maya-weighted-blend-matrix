@@ -9,3 +9,6 @@ plug-ins: plug-ins/2020
 
 + MAYAVERSION:2022 weighted-blend-matrix 0.0.1 <PATH>
 plug-ins: plug-ins/2022
+
++ MAYAVERSION:2023 weighted-blend-matrix 0.0.1 <PATH>
+plug-ins: plug-ins/2023
